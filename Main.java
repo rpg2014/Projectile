@@ -8,7 +8,7 @@ public class Main {
 		final  double TARGET_MIN = 999.95;
 		final double TARGET_MAX = 1000.05;
 		final double midPoint = (TARGET_MIN+TARGET_MAX)/2;
-		double initalTotalV = 100;
+		double initalTotalV = 1;
 		double velMod = 10;
 		final double initalAngle = 45; // in degrees between 0,90 exclusive
 		//final double 

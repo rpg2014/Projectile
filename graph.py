@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 import time
-
+#test
 
 data = np.loadtxt('output.csv', delimiter=',' , dtype=float)
 
@@ -20,4 +20,3 @@ plt.ylim(0,max_y)
 plt.xlim(0,max_x)
 plt.show()
 
-time.sleep(1)
