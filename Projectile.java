@@ -2,15 +2,20 @@
 
 public class Projectile
 {
-    //constants
+    //inital conditions
+    double timeStep = 0.0005;
+    double Y0Pos = 0.0;
+    double X0Pos= 0.0;
+
+    
+    //projectile constants
     double mass = 0.24;//0.0024;
     double g0 = -9.80665;
-    double Y0Pos = 0.0;
-    boolean record = false;
-    double X0Pos= 0.0;
-    double RadEar = 6371000; // mean radius of earth for varying g
-    double timeStep = 0.0005;
+    double Area = 0.001122; //cross sectional area
     double dragCoef = 0.001;
+
+    //earth / atmosphere constants
+    double RadEar = 6371000; // mean radius of earth for varying g
     double AirDensity = 1.167;
     double p0 = 101.325;
     double t0 = 288.15;
@@ -18,15 +23,14 @@ public class Projectile
     double R = 8.31447; // gas constant
     double M = 0.0289644; //molar mass of air
     double Cd = .00047; // i dont know what this is
-    double Area = 0.001122; //cross sectional area
-    //updated things
-    double Y0Vel;
+    
+    
+    //declare variables
     double YPos = Y0Pos;
-    double YVel;
     double XPos = X0Pos;
-    double XVel;
     double g;
     double X0Vel;
+    double Y0Vel;
     double TotalVel;
     double DragForce;
     double XDragForce;
@@ -34,13 +38,12 @@ public class Projectile
     double Angle;
     double XAccel;
     double YAccel;
-    //String path = "output.csv";
-    boolean OnGround = false;
+    boolean OnGround;
+    
+    //create pos and vel objects
     Position pos = new Position(X0Pos, Y0Pos);
     public Velocity vel = new Velocity();
 
-//    double six = 6;
-//    double three = 3;
 
 
     public Projectile(double v, double degrees, int a)
@@ -68,6 +71,8 @@ public class Projectile
  public Projectile() {
 		// TODO Auto-generated constructor stub
 	}
+
+
 /**
   * update methods
   * i want to eventually make the update timestep one method
